@@ -1,0 +1,388 @@
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background-color: #fff;
+    width: 1200px;
+    
+}
+
+.site-header .container { /* Применяем только к контейнеру ВНУТРИ хедера */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: auto; /* Для точного центра логотипа */
+    height: 72px;
+}
+
+.logo-link,
+.logo-image {
+    display: inline-block;
+    height: 70px;         /* Высота логотипа */
+    object-fit: contain;  /* Сохраняет пропорции */
+    padding-bottom: 8px;
+    padding-right: 30px;
+    right: 200px; 
+}
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+
+.card-image {
+    height: 56px;
+    object-position: center;
+}
+
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
+}
+
+/* Стиль для всей страницы */
+body {
+    font-family: EB Garamond ;
+    color: #000000;
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Запрещает выделение всего документа */
+body {
+    user-select: none; /* Стандартное свойство */
+    -webkit-user-select: none; /* Для старых версий Safari/Chrome */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+}
+
+/* Контейнер для каждой секции */
+.container {
+    width: 90%;          /* Оставляем поля по бокам */
+    max-width: 1100px;   /* Ограничение ширины на больших экранах */
+    margin: 40px auto;   /* Отступы сверху/снизу + центрирование */
+    background-color: #ffffff; /* Светлый фон */
+    
+    
+    
+}
+
+/* Заголовки внутри блоков */
+.container h2 {
+    margin-bottom: 35px;
+    color: #2a2a2a;
+    text-align: center;
+    font-size: 26px;
+
+}
+
+.container h3 {
+    margin-bottom: 14px;
+    color: #2a2a2a;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+.container h1 {
+    margin-bottom: 14px;
+    color: #2a2a2a;
+    text-align: left;
+    font-size: 24px;
+    padding-left: 30px;
+
+}
+
+
+/* Текст внутри блоков */
+.container p {
+    font-size: 1.2em;
+    text-align: center;
+    text-indent: 2em; /* Отступ первой строки. 1em = размер текущего шрифта */ 
+    margin-top: 0.5em; /* Отступ между абзацами */ 
+    margin-bottom: 1.5em;
+    
+}
+
+.container p1 {
+    font-size: 1.2em;
+    text-align: left;
+    text-indent: 2em; /* Отступ первой строки. 1em = размер текущего шрифта */ 
+    margin-top: 0.5em; /* Отступ между абзацами */ 
+    margin-bottom: 1.5em;
+    padding-left: 30px;
+}
+
+/* Базовые настройки для карточек */
+.card {
+    /* Карточка занимает всю высоту своей ячейки */
+    display: flex;
+    flex-direction: column; /* Чтобы контент был сверху вниз */
+    justify-content: left; /* Центрирование контента по вертикали */
+
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: left;
+   
+}
+
+/* Контейнер */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Отступы между блоками */
+  width: 900px; /* Ограничение ширины сетки */
+  margin: 0 auto; /* Централизация */
+}
+
+/* Каждый отдельный блок */
+.text-card {
+  aspect-ratio: 1 / 1; /* Создает квадрат автоматически, даже если ширина меняется */
+  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Центрирование контента */
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+}
+
+/* Стили для текста остаются теми же, что и в варианте A */
+/* Подсветка при наведении из предыдущего сообщения */
+.card:hover { 
+    background-color: #edf3f1;  
+}
+
+/* Секция с карточками */
+.cards-section {
+    /* Она уже находится внутри .container, поэтому наследует его размеры */
+    padding-top: 60px; /* Отступ от шапки */
+}
+
+/* Контейнер для сеточной системы */
+/* Контейнер сетки */
+.card-grid {
+    /* Оставляем ваш текущий стиль */
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Карточка */
+.card {
+    --size: 250px; /* Минимальная ширина */
+    
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Убираем вертикальную центровку, если она есть */
+    align-items: initial; /* Сбрасываем наследование от родителя */
+
+    /* Добавим обёртку для текста, чтобы управлять им целиком */
+    display: block; /* Не flex, чтобы избежать проблем с выравниванием */
+}
+
+.card1 {
+    height: 300px; /* Минимальная ширина */
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+
+    /* Убираем вертикальную центровку, если она есть */
+    align-items: initial; /* Сбрасываем наследование от родителя */
+
+    /* Добавим обёртку для текста, чтобы управлять им целиком */
+    display: block; /* Не flex, чтобы избежать проблем с выравниванием */
+}
+
+/*
+ * ВАЖНО!
+ * Создайте этот класс и добавьте его внутрь каждой .card,
+ * прямо после изображения.
+ */
+.card-content {
+    text-align: left; /* Левое выравнивание всего содержимого */
+    font-size: 20px;
+}
+.card:hover { background-color: #edf3f1;  
+}
+
+
+
+
+/* Стиль для секции аккордеона */
+.accordion-section {
+  max-width: 1100px; /* Чтобы он вписывался в общую сетку */
+  min-width: 1100px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+/* Контейнер для всех карточек */
+.accordion {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  text-align: left;
+}
+
+/* Стили для всей карточки (details) */
+details {
+  background-color: #f0f0f0; /* Цвет фона всей карточки */
+  border-radius: 12px; /* Закруглённые углы всей карточки */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень всей карточки */
+  padding: 0; /* Убираем встроенные отступы */
+  margin: 0;
+  transition: background-color 0.2s ease; /* Подсветка всей карточки */
+    width: 900px;
+}
+
+/* Подсветка всей области при наведении */
+details:hover,
+details:focus-within {
+  background-color: #edf3f1;
+
+}
+
+/* Стили для кнопки (summary) */
+.tab {
+  all: unset; /* Сбрасываем дефолтные стили */
+  width: 100%; /* Занимает всю ширину карточки */
+  padding: 16px 32px; /* Внутренние отступы для текста */
+  cursor: pointer;
+  position: relative; /* Для абсолютного позиционирования плюса */
+  text-align: left; /* Заголовок слева */
+  transition: none; /* Чтобы не конфликтовать с родительским переходом */
+}
+
+/* Иконка "плюс" справа */
+.tab::after {
+  content: "+";
+  font-size: 1.4em;
+  font-weight: bold;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Меняем на "минус" при открытии */
+[open] .tab::after {
+  content: "-";
+}
+
+/* Раскрытый контент */
+details p {
+  margin-top: 16px;
+  padding: 0 32px; /* Чтобы текст не прилипал к краям */
+}
+
+summary::-webkit-details-marker { 
+    display: none; }
+
+/* Базовые стили для всей карточки */
+details {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+/* Подсветка всей области при наведении */
+details:hover,
+details:focus-within {
+  background-color: #edf3f1;
+}
+
+/* Стиль для кнопки (summary) */
+.tab {
+  all: unset; /* Сбрасывает все дефолтные стили */
+  width: 100%; /* Занимает всю ширину ячейки сетки */
+  padding: 16px 32px; /* Внутренние отступы для текста */
+  cursor: pointer;
+  position: relative; /* Нужно для абсолютного позиционирования плюса */
+  text-align: left; /* Заголовок слева */
+}
+
+/* Иконка "плюс" справа */
+.tab::after {
+  content: "+";
+  font-size: 1.4em;
+  font-weight: bold;
+  color: inherit; /* Цвет плюса совпадает с текстом */
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%); /* Центрирование по вертикали */
+}
+
+/* Меняем на "минус", когда блок открыт */
+[open] .tab::after {
+  content: "-";
+}
+
+summary::-webkit-details-marker { display: none; /* Самое важное правило */ }
+/* Раскрытый контент */
+details p {
+  margin-top: 16px;
+  padding: 0 32px; /* Отступ от краёв карточки */
+}
+
+.section-title { 
+  text-align: center; 
+  font-size: 2.5em; 
+  margin-bottom: 1.5rem;
+}
+
+.skills-container { display: grid; /* Используем Grid для идеальной сетки */ 
+  gap: 2rem; /* Отступы между элементами */ 
+  justify-content: center; /* Центруем горизонтально */ 
+  background-color: #f7fafc; /* Светло-серый фон */ 
+  padding: 2rem; border-radius: 16px;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } 
+  
+  @media (max-width: 768px) { /* Адаптивность для мобильных устройств */ 
+.skills-container { grid-template-columns: 
+      repeat(2, 3fr); /* По две колонки */ } } /* Каждый навык */ 
+.skill-item { display: flex; /* Горизонтальное расположение иконки и текста */ 
+        align-items: start; /* Выравнивает текст по верхнему краю */ 
+        gap: 1rem; /* Расстояние между иконкой и текстом */ }
+.skill-item img { filter: grayscale(10%); /* Немного сероватая иконка */ 
+          transition: filter 0.2s ease-in-out; } /* Наведение мыши: делаем иконку ярче */ 
+.skill-item:hover img, 
+.skill-item:focus-within img { filter: none; } 
+.skill-item p { margin-top: 0; /* Убираем стандартный отступ сверху */ 
+            line-height: 1.4; /* Удобный межстрочный интервал */ }
+
+.card2 { 
+  background-color: #f3f6fa; /* Светло-серый цвет фона */ 
+  border-radius: 8px; padding: 1rem; /* Внутренние отступы */ /* Плавно меняем цвет при наведении */ 
+  transition: background-color 0.2s ease-in-out; 
+} 
+.skill-item:hover .card2, 
+.skill-item:focus-within .card2 { /* Более светлый оттенок при наведении или фокусе */ 
+  background-color: #e9effa; } /* Чтобы иконка была выровнена по вертикали относительно текста */ 
+.skill-item { 
+  display: flex; 
+  align-items: center; /* Центрирование по вертикали */ 
+  gap: 1rem; /* Расстояние между иконкой и текстом */ 
+}
+
+@media (max-width: 768px) { .card-container { grid-template-columns: repeat(2, 1fr); /* На мобильных — 2 колонки */ /* Или для Flexbox: flex-wrap: wrap; и width: 50%; */ } }
