@@ -1,9 +1,9 @@
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 200;
+    z-index:999;
     background-color: #fff;
-    width: 1200px;
+    width: 100%;
     
 }
 
@@ -150,7 +150,7 @@ body {
   background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 
   /* Центрирование контента */
   display: flex;
@@ -187,7 +187,7 @@ body {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 
     /* Убираем вертикальную центровку, если она есть */
     align-items: initial; /* Сбрасываем наследование от родителя */
@@ -227,8 +227,7 @@ body {
 
 /* Стиль для секции аккордеона */
 .accordion-section {
-  max-width: 1100px; /* Чтобы он вписывался в общую сетку */
-  min-width: 1100px;
+  max-width: 100%; /* Чтобы он вписывался в общую сетку */
   margin: 40px auto;
   text-align: left;
 }
@@ -303,6 +302,7 @@ details {
   padding: 0;
   margin: 0;
   transition: background-color 0.2s ease;
+  width: 1100px;
 }
 
 /* Подсветка всей области при наведении */
@@ -349,14 +349,15 @@ details p {
   text-align: center; 
   font-size: 2.5em; 
   margin-bottom: 1.5rem;
+  justify-self: center;
 }
 
 .skills-container { display: grid; /* Используем Grid для идеальной сетки */ 
   gap: 2rem; /* Отступы между элементами */ 
-  justify-content: center; /* Центруем горизонтально */ 
+  justify-content: start; /* Центруем горизонтально */ 
   background-color: #f7fafc; /* Светло-серый фон */ 
-  padding: 2rem; border-radius: 16px;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } 
+  padding: 1rem; border-radius: 16px;
+ } 
   
   @media (max-width: 768px) { /* Адаптивность для мобильных устройств */ 
 .skills-container { grid-template-columns: 
@@ -369,12 +370,14 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .skill-item:hover img, 
 .skill-item:focus-within img { filter: none; } 
 .skill-item p { margin-top: 0; /* Убираем стандартный отступ сверху */ 
-            line-height: 1.4; /* Удобный межстрочный интервал */ }
+            line-height: 1.4;
+            text-align: start; /* Удобный межстрочный интервал */ }
 
 .card2 { 
   background-color: #f3f6fa; /* Светло-серый цвет фона */ 
   border-radius: 8px; padding: 1rem; /* Внутренние отступы */ /* Плавно меняем цвет при наведении */ 
   transition: background-color 0.2s ease-in-out; 
+  --size:250px;
 } 
 .skill-item:hover .card2, 
 .skill-item:focus-within .card2 { /* Более светлый оттенок при наведении или фокусе */ 
@@ -383,6 +386,107 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
   display: flex; 
   align-items: center; /* Центрирование по вертикали */ 
   gap: 1rem; /* Расстояние между иконкой и текстом */ 
+  grid-template-columns: repeat (var(--47ab58a4), 1fr);
+}
+
+.site-footer {
+    width: 100%;
+    background-color: #f7fafc;
+    color: #333;
+    
+    /* Убираем статичную высоту и добавляем внутренние отступы */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box; /* Чтобы padding учитывался в ширине */
+    
+    display: flex;
+    justify-content: center; /* Центрируем контент горизонтально */
+    align-items: stretch; /* Растягиваем элементы вертикально */
+}
+
+.inner-container {
+    max-width: 1200px;
+    width: 95%; /* Оставляем небольшие поля от краёв экрана */
+    margin: 0 auto; /* Центрирование */
+    display: grid;
+    gap: 1em;
+    grid-template-rows: repeat(auto-fit, minmax(16ch, 1fr));
+    align-items: baseline;
+    align-content: space-around;
+    justify-content: stretch;
+    justify-items: end;
+}
+
+
+/* Остальные стили для .logo, .email-link и .copyright остаются без изменений */
+
+.logo {
+    grid-area: 1 / 1 / span 2 / span 1; /* Логотип занимает две строки */
+    justify-self: start;
+    width: 64px;
+}
+
+.email-link {
+    grid-row-start: 1;
+    justify-self: self-end;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+    &:hover { opacity: 0.8; }
+
+}
+
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .inner-container {
+        grid-template-columns: 1fr; /* На мобилках — одна колонка */
+        gap: 1.5rem;
+        
+        /* Переносим логотип и почту вниз, под копирайт */
+        .logo,
+        .email-link {
+            justify-self: center;
+            grid-row: 2; /* Под текстом о правах */
+        }
+    }
+}
+
+
+/* Базовый сброс стилей */
+*,
+::before,
+::after {
+    box-sizing: border-box; /* Включаем padding и border в ширину элемента */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: EB Garamond;
+}
+
+.skills-container {
+    /* ... другие стили */
+    margin-bottom: 4rem; /* Большой отступ от футера */
+}
+/* Или можно создать отдельный разделительный элемент */
+
+.big-emoji {
+    font-size: 3rem; /* Размер можно менять */
+    color: #81afb3;
+    box-shadow: #628a8d;
+}
+/* Или глобально для всех эмодзи на странице */
+.emoji {
+    font-size: 2em;
+    color: #81afb3;
+    box-shadow: #628a8d;
 }
 
 @media (max-width: 768px) { .card-container { grid-template-columns: repeat(2, 1fr); /* На мобильных — 2 колонки */ /* Или для Flexbox: flex-wrap: wrap; и width: 50%; */ } }
