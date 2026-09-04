@@ -383,10 +383,10 @@ details p {
 .skill-item:focus-within .card2 { /* Более светлый оттенок при наведении или фокусе */ 
   background-color: #e9effa; } /* Чтобы иконка была выровнена по вертикали относительно текста */ 
 .skill-item { 
-  display: flex; 
+  display: grid; 
   align-items: center; /* Центрирование по вертикали */ 
   gap: 1rem; /* Расстояние между иконкой и текстом */ 
-  grid-template-columns: repeat (var(--47ab58a4), 1fr);
+  grid-template-columns: repeat(3, 2fr);
 }
 
 .site-footer {
