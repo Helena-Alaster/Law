@@ -440,6 +440,7 @@ details p {
     text-align: center;
     font-size: 0.9rem;
     opacity: 0.7;
+    justify-self: center;
 }
 
 @media (max-width: 768px) {
