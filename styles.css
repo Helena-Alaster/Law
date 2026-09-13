@@ -178,6 +178,7 @@ body {
     margin-right: 0;
     text-align: justify;
     justify-self: center;
+    color: #000000;
 
     
 }
@@ -259,6 +260,7 @@ body {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
+    justify-self: center;
 
 
     /* Убираем вертикальную центровку, если она есть */
@@ -326,6 +328,8 @@ details:last-child {
   cursor: pointer;
   list-style: none; /* Скрываем стандартный маркер браузера */
   transition: background-color 0.2s ease;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* Фон при наведении */
@@ -387,8 +391,12 @@ details[open] .native-content {
   gap: 2rem; /* Отступы между элементами */ 
   justify-content: start; /* Центруем горизонтально */ 
   background-color: #f7fafc; /* Светло-серый фон */ 
-  padding: 1rem; border-radius: 16px;
- } 
+  padding: 1rem; 
+  border-radius: 16px;
+  width: 850px;
+    margin-left: -20px;
+}
+ 
   
   @media (max-width: 768px) { /* Адаптивность для мобильных устройств */ 
 .skills-container { grid-template-columns: 
