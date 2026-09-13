@@ -529,6 +529,7 @@ html, body {
     font-size: 3rem; /* Размер можно менять */
     color: #81afb3;
     box-shadow: #628a8d;
+    margin-right: 10px;
 }
 /* Или глобально для всех эмодзи на странице */
 .emoji {
