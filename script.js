@@ -9,3 +9,12 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault(); // Предотвращаем стандартную реакцию
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() { 
+    const burger = document.querySelector('.burger-btn'); 
+    const nav = document.querySelector('.navigation'); 
+burger.addEventListener('click', function() { 
+    nav.classList.toggle('active'); 
+    burger.classList.toggle('active'); 
+}); 
+});
