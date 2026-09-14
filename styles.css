@@ -357,7 +357,7 @@ details[open] > .native-header::after {
 
 /* Содержимое */
 .native-content {
-  padding: 0 18px 14px 18px;
+  padding: 20px 18px 14px 18px;
   color: #333;
   line-height: 1.6;
   border-top: 1px solid #f0f0f0;
