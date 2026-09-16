@@ -483,11 +483,15 @@ details[open] .native-content {
 }
 
 @media (max-width: 768px) {
-    .container {
+    container {
         max-width: 768px;
         width: 100%;
 }
-
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Страховка от прилипания самого body */
+    }
+    
 
 /* Базовый сброс стилей */
 *,
