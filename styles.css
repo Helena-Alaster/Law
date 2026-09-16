@@ -304,8 +304,9 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
-  width: 850px;
+  max-width: 850px;
   font-family: EB Garamond, sans-serif;
+  margin-bottom: 5%;
 }
 
 /* Контейнер детали */
