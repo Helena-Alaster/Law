@@ -483,17 +483,9 @@ details[open] .native-content {
 }
 
 @media (max-width: 768px) {
-    .inner-container {
-        grid-template-columns: 1fr; /* На мобилках — одна колонка */
-        gap: 1.5rem;
-        
-        /* Переносим логотип и почту вниз, под копирайт */
-        .logo,
-        .email-link {
-            justify-self: center;
-            grid-row: 2; /* Под текстом о правах */
-        }
-    }
+    .container {
+        max-width: 768px;
+        width: 100%;
 }
 
 
@@ -506,7 +498,7 @@ details[open] .native-content {
 html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    max-width: 850px;
     height: 100%;
     font-family: EB Garamond;
 }
