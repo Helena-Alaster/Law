@@ -85,11 +85,11 @@
             </tr>
             <tr>
                 <td>Участие в судебном заседании без подготовки позиции</td>
-                <td>от 20 000 рублей</td>
+                <td>от 15 000 рублей</td>
             </tr>
             <tr>
                 <td>Ведение исполнительного производства</td>
-                <td>от 20 000 рублей</td>
+                <td>от 5 000 рублей</td>
             </tr>
         </tbody>
     </table>
@@ -109,6 +109,29 @@ function togglePrices() {
         btn.innerText = "Показать прайс-лист";
     }
 }
+function togglePrices2() {
+        var table = document.getElementById("js2-prices-table");
+        var btn = document.getElementById("js2-toggle-btn");
+        
+        if (table.style.display === "none") {
+            table.style.display = "block";
+            btn.innerText = "Скрыть прайс-лист";
+        } else {
+            table.style.display = "none";
+            btn.innerText = "Показать прайс-лист";
+        }}
+
+function togglePrices3() {
+        var table = document.getElementById("js3-prices-table");
+        var btn = document.getElementById("js3-toggle-btn");
+        
+        if (table.style.display === "none") {
+            table.style.display = "block";
+            btn.innerText = "Скрыть прайс-лист";
+        } else {
+            table.style.display = "none";
+            btn.innerText = "Показать прайс-лист";
+        }}
 </script>
                 
                 
@@ -148,6 +171,23 @@ function togglePrices() {
                             - Офисное ПО: MS Office, Excel, PDF, FineRider, CamScan, 1С.</p>
                 </div>
             </details>
+                           <button onclick="togglePrices2()" id="js2-toggle-btn">Показать прайс-лист</button>
+<div id="js2-prices-table" style="display: none; margin-top: 15px;">
+    <!-- Обертка для адаптации под мобильные устройства -->
+<div class="price-table-wrapper">
+    <table class="simple-price-table">
+        <tbody>
+            <tr>
+                <td>Абонентское обслуживание</td>
+                <td>от 30 000 рублей в месяц</td>
+            </tr>
+            <tr>
+                <td>Проверка договора</td>
+                <td>от 3 000 рублей</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         </section> 
         <section id="state">
         <h2>Общение с государством</h2> 
@@ -165,7 +205,23 @@ function togglePrices() {
                                 - Мотивация образовательных учреждений к проведению дополнительных уроков правовой тематики.</p>
                 </div>
             </details>
-
+<button onclick="togglePrices3()" id="js3-toggle-btn">Показать прайс-лист</button>
+<div id="js3-prices-table" style="display: none; margin-top: 15px;">
+    <!-- Обертка для адаптации под мобильные устройства -->
+<div class="price-table-wrapper">
+    <table class="simple-price-table">
+        <tbody>
+            <tr>
+                <td>Составление письма в государственный или муниципальный орган</td>
+                <td>от 5 000 рублей </td>
+            </tr>
+            <tr>
+                <td>Проработка и ведение диалога с ведомством или компанией для лоббирования интереса</td>
+                <td>от 10 000 рублей в месяц</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         </div>
         </section>
         </div>
