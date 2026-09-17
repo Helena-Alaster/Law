@@ -96,6 +96,21 @@
 </div>
    <!-- Ваша таблица -->
 </div>
+<script>
+function togglePrices() {
+    var table = document.getElementById("js-prices-table");
+    var btn = document.getElementById("js-toggle-btn");
+    
+    if (table.style.display === "none") {
+        table.style.display = "block";
+        btn.innerText = "Скрыть прайс-лист";
+    } else {
+        table.style.display = "none";
+        btn.innerText = "Показать прайс-лист";
+    }
+}
+</script>
+                
                 
             </section>
             <section id="business">
