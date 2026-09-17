@@ -82,6 +82,71 @@ body {
     
 }
 
+.price-table-wrapper {
+    overflow-x: auto; /* Включает горизонтальную прокрутку на малых экранах */
+    padding-bottom: 10px;
+}
+
+/* 2. Базовые стили таблицы */
+.simple-price-table {
+    width: 100%;
+    border-collapse: collapse; /* Убирает двойные рамки между ячейками */
+    min-width: 400px; /* Минимальная ширина, чтобы на десктопе данные не сжались слишком сильно */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 3. Стили ячеек */
+.simple-price-table th,
+.simple-price-table td {
+    text-align: left;
+    padding: 14px 16px;
+    border: 1px solid #dee2e6; /* Светло-серая рамка */
+}
+
+/* 4. Выделение шапки */
+.simple-price-table thead {
+    background-color: #f8f9fa;
+}
+.simple-price-table th {
+    font-weight: 600;
+    color: #212529;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* 5. Зебра (чередование цветов строк) для удобства чтения */
+.simple-price-table tbody tr:nth-child(even) {
+    background-color: #fdfdff;
+}
+
+/* 6. Горизонтальные разделители (если нужны только линии без боковых границ) */
+.simple-price-table tbody td {
+    border-top: none;
+    border-bottom: 1px solid #eee;
+}
+.simple-price-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 7. Адаптация отступов для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .simple-price-table th,
+    .simple-price-table td {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+    
+    .simple-price-table thead {
+        display: none; /* Опционально: можно скрыть названия колонок на очень узких экранах */
+    }
+    
+    /* Если скрыли THEAD, можно добавить подписи через data-атрибуты в HTML, 
+       но для простого списка это излишне */
+}
+
+
 .navigation {
     margin-left: 70px;
     margin-top: -60px;
@@ -493,13 +558,16 @@ textarea {
     transform: scale(1.2); 
 } 
 button { 
-    padding: 12px 20px; 
-    cursor: pointer; 
-    background-color: #007bff; 
-    color: white; 
-    border: none; 
-    border-radius: 4px; 
-    font-size: 16px; 
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #0e0e0e;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 850px;
+    width: 100%;
+    font-family: 'EB Garamond', serif;
 } 
 button:disabled { 
     background-color: #a0a0a0; 
