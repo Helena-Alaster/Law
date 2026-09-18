@@ -133,7 +133,7 @@ body {
 }
 
 /* 7. Адаптация отступов для мобильных устройств */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .simple-price-table th,
     .simple-price-table td {
         padding: 12px 10px;
@@ -314,17 +314,12 @@ body {
 
 /* Контейнер для сеточной системы */
 /* Контейнер сетки */
-.card-grid {
-    /* Оставляем ваш текущий стиль */
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(850px, 1fr));
-}
+
 
 /* Карточка */
 .card {
-    --size: 250px; /* Минимальная ширина */
-    
+    max-width: 850px;
+    width: 100%;/* Минимальная ширина */
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
@@ -443,7 +438,7 @@ details[open] .native-content {
 }
 
 /* Адаптивность */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .native-header, .native-content {
     padding-left: 16px;
     padding-right: 16px;
@@ -456,46 +451,7 @@ details[open] .native-content {
   justify-self: center;
 }
 
-.skills-container { display: grid; /* Используем Grid для идеальной сетки */ 
-  gap: 2rem; /* Отступы между элементами */ 
-  justify-content: start; /* Центруем горизонтально */ 
-  background-color: #f7fafc; /* Светло-серый фон */ 
-  padding: 1rem; 
-  border-radius: 16px;
-  width: 850px;
-    margin-left: -20px;
-}
- 
-  
-  @media (max-width: 768px) { /* Адаптивность для мобильных устройств */ 
-.skills-container { grid-template-columns: 
-      repeat(2, 3fr); /* По две колонки */ } } /* Каждый навык */ 
-.skill-item { display: flex; /* Горизонтальное расположение иконки и текста */ 
-        align-items: start; /* Выравнивает текст по верхнему краю */ 
-        gap: 1rem; /* Расстояние между иконкой и текстом */ }
-.skill-item img { filter: grayscale(10%); /* Немного сероватая иконка */ 
-          transition: filter 0.2s ease-in-out; } /* Наведение мыши: делаем иконку ярче */ 
-.skill-item:hover img, 
-.skill-item:focus-within img { filter: none; } 
-.skill-item p { margin-top: 0; /* Убираем стандартный отступ сверху */ 
-            line-height: 1.4;
-            text-align: start; /* Удобный межстрочный интервал */ }
 
-.card2 { 
-  background-color: #f3f6fa; /* Светло-серый цвет фона */ 
-  border-radius: 8px; padding: 1rem; /* Внутренние отступы */ /* Плавно меняем цвет при наведении */ 
-  transition: background-color 0.2s ease-in-out; 
-  --size:250px;
-} 
-.skill-item:hover .card2, 
-.skill-item:focus-within .card2 { /* Более светлый оттенок при наведении или фокусе */ 
-  background-color: #e9effa; } /* Чтобы иконка была выровнена по вертикали относительно текста */ 
-.skill-item { 
-  display: grid; 
-  align-items: center; /* Центрирование по вертикали */ 
-  gap: 1rem; /* Расстояние между иконкой и текстом */ 
-  grid-template-columns: repeat(3, 2fr);
-}
 
 .site-footer {
     width: 850px;
