@@ -89,11 +89,13 @@ body {
 
 /* 2. Базовые стили таблицы */
 .simple-price-table {
+    max-width: 850px;
     width: 100%;
-    border-collapse: collapse; /* Убирает двойные рамки между ячейками */
-    min-width: 400px; /* Минимальная ширина, чтобы на десктопе данные не сжались слишком сильно */
-    font-size: 16px;
+    border-collapse: collapse;
+    min-width: 400px;
+    font-size: 20px;
     line-height: 1.5;
+    font-family: 'Times New Roman', serif;
 }
 
 /* 3. Стили ячеек */
