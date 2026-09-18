@@ -615,7 +615,7 @@ button:disabled {
 /* Принудительная адаптация в самом конце файла */
 @media screen and (max-width: 768px) {
     html, body, .site-header, .card-grid, .card-row, .container, .application-form {
-        width: 90% !important;
+        width: 100% !important;
         max-width: 768px !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
