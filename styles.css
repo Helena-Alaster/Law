@@ -1,29 +1,57 @@
+/* Базовый сброс стилей */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'EB Garamond', serif;
+    overflow-x: hidden; /* Страховка от случайных вылетов блоков */
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Запрещает выделение всего документа */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* --- ШАПКА И НАВИГАЦИЯ --- */
 .site-header {
     position: sticky;
     top: 0;
-    z-index:999;
+    z-index: 999;
     background-color: #fff;
-    width: 850px;
+    width: 100%;
     height: 80px;
-    
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
-.site-header .container { /* Применяем только к контейнеру ВНУТРИ хедера */
+.site-header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: auto; /* Для точного центра логотипа */
+    gap: auto;
     height: 72px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo-link,
 .logo-image {
     display: inline-block;
-    height: 70px;         /* Высота логотипа */
-    object-fit: contain;  /* Сохраняет пропорции */
+    height: 70px;
+    object-fit: contain;
     padding-bottom: 8px;
     padding-right: 30px;
-    right: 200px; 
 }
 
 .main-nav ul {
@@ -36,126 +64,6 @@
 .main-nav li {
     margin-left: 20px;
 }
-
-
-.card-image {
-    height: 56px;
-    object-position: center;
-}
-
-/* Базовые настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Чтобы padding не увеличивал ширину блока */
-}
-
-/* Стиль для всей страницы */
-body {
-    font-family: 'Times New Roman', serif ;
-    color: #000000;
-    line-height: 1.6; /* Межстрочный интервал */
-}
-
-/* Запрещает выделение всего документа */
-body {
-    user-select: none; /* Стандартное свойство */
-    -webkit-user-select: none; /* Для старых версий Safari/Chrome */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE/Edge */
-}
-
-/* Контейнер для каждой секции */
-.container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 40px 0 0;
-            max-width: 850px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            align-content: center;
-            flex-direction: column;
-    
-    
-    
-}
-
-.price-table-wrapper {
-    overflow-x: auto; /* Включает горизонтальную прокрутку на малых экранах */
-    padding-bottom: 10px;
-}
-
-/* 2. Базовые стили таблицы */
-.simple-price-table {
-    max-width: 850px;
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 400px;
-    font-size: 20px;
-    line-height: 1.5;
-    font-family: 'Times New Roman', serif;
-}
-
-/* 3. Стили ячеек */
-.simple-price-table th,
-.simple-price-table td {
-    text-align: left;
-    padding: 14px 16px;
-    border: 1px solid #dee2e6; /* Светло-серая рамка */
-}
-
-/* 4. Выделение шапки */
-.simple-price-table thead {
-    background-color: #f8f9fa;
-}
-.simple-price-table th {
-    font-weight: 600;
-    color: #212529;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-/* 5. Зебра (чередование цветов строк) для удобства чтения */
-.simple-price-table tbody tr:nth-child(even) {
-    background-color: #fdfdff;
-}
-
-/* 6. Горизонтальные разделители (если нужны только линии без боковых границ) */
-.simple-price-table tbody td {
-    border-top: none;
-    border-bottom: 1px solid #eee;
-}
-.simple-price-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* 7. Адаптация отступов для мобильных устройств */
-@media screen and (max-width: 768px) {
-    .simple-price-table th,
-    .simple-price-table td {
-        padding: 12px 10px;
-        font-size: 15px;
-    }
-    
-    .simple-price-table thead {
-        display: none; /* Опционально: можно скрыть названия колонок на очень узких экранах */
-    }
-    
-    /* Если скрыли THEAD, можно добавить подписи через data-атрибуты в HTML, 
-       но для простого списка это излишне */
-}
-
-
-.navigation {
-    margin-left: 70px;
-    margin-top: -60px;
-    justify-self: center;
-    margin-right: 22px;
-}
-
 
 .nav-list { 
     list-style: none; 
@@ -174,7 +82,7 @@ body {
 
 .nav-list a:hover { 
     color: #fff; 
-} /* Стили бургера (скрыт по умолчанию) */ 
+} 
 
 .burger-btn { 
     display: none; 
@@ -193,7 +101,7 @@ body {
     margin-bottom: 5px; 
     border-radius: 3px; 
     transition: transform 0.3s ease, opacity 0.3s ease; 
-} /* Анимация превращения крестика в бургер */ 
+} 
 
 .burger-btn.active span:nth-child(1) { 
     transform: translateY(8px) rotate(45deg); 
@@ -207,13 +115,27 @@ body {
     transform: translateY(-8px) rotate(-45deg); 
 }
 
-/* Заголовки внутри блоков */
+
+/* --- ОСНОВНОЙ КОНТЕЙНЕР И ТЕКСТ --- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0 0;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+}
+
 .container h2 {
     margin-bottom: 35px;
     color: #2a2a2a;
     text-align: center;
     font-size: 26px;
-
 }
 
 .container h3 {
@@ -221,7 +143,6 @@ body {
     color: #2a2a2a;
     text-align: center;
     font-size: 20px;
-
 }
 
 .container h1 {
@@ -230,183 +151,237 @@ body {
     text-align: left;
     font-size: 24px;
     padding-left: 30px;
-
 }
 
-
-/* Текст внутри блоков */
 .container p {
     margin-bottom: 15px;
     opacity: 0.9;
     font-size: 1.4rem;
     line-height: 1.1;
     max-width: 800px;
-    margin-left: 0;
-    margin-right: 0;
     text-align: justify;
-    justify-self: center;
     color: #000000;
-    text-indent: 25px;
-
-    
 }
 
 .container p1 {
     font-size: 1.2em;
     text-align: left;
-    text-indent: 2em; /* Отступ первой строки. 1em = размер текущего шрифта */ 
-    margin-top: 0.5em; /* Отступ между абзацами */ 
+    text-indent: 2em;
+    margin-top: 0.5em;
     margin-bottom: 1.5em;
     padding-left: 30px;
 }
 
-/* Базовые настройки для карточек */
-.card {
-    /* Карточка занимает всю высоту своей ячейки */
-    display: flex;
-    flex-direction: column; /* Чтобы контент был сверху вниз */
-    justify-content: left; /* Центрирование контента по вертикали */
 
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    text-align: left;
-    width: 850px;
-   
-}
-
-/* Контейнер */
+/* --- КАРТОЧКИ И СЕТКИ --- */
 .card-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Отступы между блоками */
-  width: 900px; /* Ограничение ширины сетки */
-  margin: 0 auto; /* Централизация */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-/* Каждый отдельный блок */
 .text-card {
-    flex: 1 1 calc(50% - 20px); /* Занимает половину строки (минус отступ) */
-    min-width: 850px; /* Чтобы на узких экранах не сжимался слишком сильно */
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 15px;
-
-
-  /* Центрирование контента */
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    width: 100%;
 }
 
-/* Стили для текста остаются теми же, что и в варианте A */
-/* Подсветка при наведении из предыдущего сообщения */
+.card-grid {
+    display: grid;
+    gap: 30px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+    display: block;
+    transition: background-color 0.2s ease-in-out;
+}
+
 .card:hover { 
     background-color: #edf3f1;  
 }
 
-/* Секция с карточками */
-.cards-section {
-    /* Она уже находится внутри .container, поэтому наследует его размеры */
-    padding-top: 60px; /* Отступ от шапки */
-}
-
-/* Контейнер для сеточной системы */
-/* Контейнер сетки */
-
-
-/* Карточка */
-.card {
-    max-width: 850px;
-    width: 100%;/* Минимальная ширина */
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    justify-self: center;
-
-
-    /* Убираем вертикальную центровку, если она есть */
-    align-items: initial; /* Сбрасываем наследование от родителя */
-
-    /* Добавим обёртку для текста, чтобы управлять им целиком */
-    display: block; /* Не flex, чтобы избежать проблем с выравниванием */
-}
-
-.card1 {
-    height: 300px; /* Минимальная ширина */
-    width: 300px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-
-    /* Убираем вертикальную центровку, если она есть */
-    align-items: initial; /* Сбрасываем наследование от родителя */
-
-    /* Добавим обёртку для текста, чтобы управлять им целиком */
-    display: block; /* Не flex, чтобы избежать проблем с выравниванием */
-}
-
-/*
- * ВАЖНО!
- * Создайте этот класс и добавьте его внутрь каждой .card,
- * прямо после изображения.
- */
 .card-content {
-    text-align: left; /* Левое выравнивание всего содержимого */
+    text-align: left;
     font-size: 20px;
 }
-.card:hover { background-color: #edf3f1;  
+
+.card-image {
+    height: 56px;
+    object-position: center;
+}
+
+.card2 { 
+  background-color: #f3f6fa; 
+  border-radius: 8px; 
+  padding: 1rem; 
+  transition: background-color 0.2s ease-in-out; 
+} 
+.skill-item:hover .card2 { 
+  background-color: #e9effa; 
 }
 
 
+/* --- НАВЫКИ --- */
+.skills-container { 
+  display: grid; 
+  gap: 2rem; 
+  justify-content: start; 
+  background-color: #f7fafc; 
+  padding: 1rem; 
+  border-radius: 16px;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) { 
+  .skills-container { 
+      grid-template-columns: repeat(2, 1fr); 
+  } 
+} 
+
+@media (max-width: 480px) { 
+  .skills-container { 
+      grid-template-columns: 1fr; 
+  } 
+}
+
+.skill-item { 
+  display: grid; 
+  align-items: center; 
+  gap: 1rem; 
+  grid-template-columns: repeat(3, 2fr);
+}
+
+.skill-item img { 
+  filter: grayscale(10%); 
+  transition: filter 0.2s ease-in-out; 
+} 
+
+.skill-item:hover img, 
+.skill-item:focus-within img { 
+  filter: none; 
+} 
+
+.skill-item p { 
+  margin-top: 0; 
+  line-height: 1.4;
+  text-align: start; 
+}
 
 
-/* Стиль для секции аккордеона */
+/* --- ТАБЛИЦА ЦЕН --- */
+.price-table-wrapper {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.simple-price-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Times New Roman', serif;
+}
+
+.simple-price-table th,
+.simple-price-table td {
+    text-align: left;
+    padding: 14px 16px;
+    border: 1px solid #dee2e6;
+}
+
+.simple-price-table thead {
+    background-color: #f8f9fa;
+}
+.simple-price-table th {
+    font-weight: 600;
+    color: #212529;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.simple-price-table tbody tr:nth-child(even) {
+    background-color: #fdfdff;
+}
+
+.simple-price-table tbody td {
+    border-top: none;
+    border-bottom: 1px solid #eee;
+}
+.simple-price-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 767px) {
+    .simple-price-table th,
+    .simple-price-table td {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+    
+    .simple-price-table thead {
+        display: none;
+    }
+}
+
+
+/* --- АККОРДЕОН --- */
 .accordion-native {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
   max-width: 850px;
-  font-family: 'Times New Roman', serif ;
+  width: 100%;
+  font-family: EB Garamond, sans-serif;
   margin-bottom: 5%;
 }
 
-/* Контейнер детали */
 details {
   border-bottom: 1px solid #f0f0f0;
   background-color: #fff;
 }
 
-/* Убираем границу у последнего элемента */
 details:last-child {
   border-bottom: none;
 }
 
-/* Заголовок (summary) */
 .native-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 18px;
   cursor: pointer;
-  list-style: none; /* Скрываем стандартный маркер браузера */
+  list-style: none;
   transition: background-color 0.2s ease;
   font-size: 20px;
   font-weight: 500;
 }
 
-/* Фон при наведении */
 .native-header:hover {
   background-color: #f9f9f9;
 }
 
-/* Сбрасываем дефолтный треугольник WebKit-браузеров (Chrome, Safari) */
 details summary::-webkit-details-marker {
   display: none;
 }
 
-/* Наша собственная стрелка */
 .native-header::after {
   content: '▾';
   transition: transform 0.25s ease;
@@ -414,12 +389,10 @@ details summary::-webkit-details-marker {
   font-size: 0.7em;
 }
 
-/* Поворачиваем стрелку в открытом состоянии */
 details[open] > .native-header::after {
   transform: rotate(180deg);
 }
 
-/* Содержимое */
 .native-content {
   padding: 20px 18px 14px 18px;
   color: #333;
@@ -427,7 +400,6 @@ details[open] > .native-header::after {
   border-top: 1px solid #f0f0f0;
 }
 
-/* Небольшая анимация появления через прозрачность */
 details[open] .native-content {
   animation: fadeIn 0.2s ease-in-out;
 }
@@ -437,40 +409,31 @@ details[open] .native-content {
   to { opacity: 1; }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .native-header, .native-content {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
-.section-title { 
-  text-align: center; 
-  font-size: 2.5em; 
-  margin-bottom: 1.5rem;
-  justify-self: center;
-}
 
 
-
+/* --- ФУТЕР --- */
 .site-footer {
-    width: 850px;
+    width: 100%;
     background-color: #f7fafc;
     color: #333;
-    
-    /* Убираем статичную высоту и добавляем внутренние отступы */
     padding-top: 2rem;
     padding-bottom: 2rem;
-    box-sizing: border-box; /* Чтобы padding учитывался в ширине */
-    
+    box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Центрируем контент горизонтально */
-    align-items: stretch; /* Растягиваем элементы вертикально */
+    justify-content: center;
+    align-items: stretch;
 }
 
 .inner-container {
-    width: 850px; /* Оставляем небольшие поля от краёв экрана */
-    margin: 0 auto; /* Центрирование */
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
     display: grid;
     gap: 1em;
     grid-template-rows: repeat(auto-fit, minmax(16ch, 1fr));
@@ -480,30 +443,54 @@ details[open] .native-content {
     justify-items: end;
 }
 
+.logo {
+    grid-area: 1 / 1 / span 2 / span 1;
+    justify-self: start;
+    width: 64px;
+}
+
+.email-link {
+    grid-row-start: 1;
+    justify-self: self-end;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+}
+.email-link:hover { 
+    opacity: 0.8; 
+}
+
+.copyright {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    justify-self: center;
+}
+
+
+/* --- ФОРМА --- */
 .application-form {
     max-width: 850px; 
+    width: 100%; /* Чтобы форма не вылезала за края на мобильных */
     padding: 25px; 
     border: 1px solid #ddd; 
     border-radius: 8px; 
     background-color: #fff; 
+    margin: 0 auto; 
 } 
 label { 
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-family: 'Times New Roman', serif;
-    font-size: 20px; 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: bold; 
 } 
 input[type="text"], input[type="email"], select, textarea { 
-    width: 100%;
-    max-width: 850px;
+    width: 100%; 
     padding: 10px; 
     margin-bottom: 15px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
     box-sizing: border-box; 
-    font-size: 20px; 
-    font-family: 'Times New Roman', serif;
+    font-size: 16px; 
 } 
 textarea { 
     resize: vertical; 
@@ -517,7 +504,7 @@ textarea {
 } 
 .checkbox-group input[type="checkbox"] { 
     margin-right: 10px; 
-    margin-top: 3px; /* Выравниваем по вертикали с текстом */ 
+    margin-top: 3px; 
     transform: scale(1.2); 
 } 
 button { 
@@ -527,10 +514,9 @@ button {
     color: #0e0e0e;
     border: none;
     border-radius: 4px;
-    font-size: 20px;
-    max-width: 850px;
+    font-size: 16px;
     width: 100%;
-    font-family: 'Times New Roman', serif ;
+    font-family: 'EB Garamond', serif;
 } 
 button:disabled { 
     background-color: #a0a0a0; 
@@ -546,84 +532,98 @@ button:disabled {
 }
 
 
-/* Остальные стили для .logo, .email-link и .copyright остаются без изменений */
+/* --- МЕДИА-ЗАПРОСЫ АДАПТАЦИИ --- */
 
-.logo {
-    grid-area: 1 / 1 / span 2 / span 1; /* Логотип занимает две строки */
-    justify-self: start;
-    width: 64px;
+/* Планшеты и малые ноутбуки: меняем сетку навыков, показываем отступы */
+@media screen and (max-width: 768px) {
+    .site-header .container {
+        height: auto;
+        padding: 10px 0;
+    }
+    .main-nav li {
+        margin-left: 15px;
+    }
+    .nav-list a {
+        font-size: 14px;
+    }
 }
 
-.email-link {
-    grid-row-start: 1;
-    justify-self: self-end;
-    text-decoration: none;
-    transition: opacity 0.2s ease-in-out;
-    &:hover { opacity: 0.8; }
-
-}
-
-.copyright {
-    grid-column: 1/-1;
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    justify-self: center;
-}
-
-@media (max-width: 768px) {
-    container {
-        max-width: 768px;
-        width: 100%;
-}
-@media  (max-width: 768px) {
-    body {
-        max-width: 768px;
-        width: 100%;
-        padding: 0 10px; /* Страховка от прилипания самого body */
+/* Основной мобильный брейкпоинт: прячем меню, перестраиваем сетки */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-list.active {
+        display: flex;
+    }
+    .burger-btn {
+        display: flex;
     }
     
-
-/* Базовый сброс стилей */
-*,
-::before,
-::after {
-    box-sizing: border-box; /* Включаем padding и border в ширину элемента */
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    max-width: 850px;
-    height: 100%;
-    font-family: 'Times New Roman', serif ;
-}
-
-.skills-container {
-    /* ... другие стили */
-    margin-bottom: 4rem; /* Большой отступ от футера */
-}
-
-.grid-container {
-  display: grid;
-  /* Явно указываем структуру сетки: 3 столбца и автоматические строки */
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  gap: 20px;
+    .container {
+        padding-top: 20px;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+    }
+    
+    .application-form {
+        padding: 15px;
+    }
 }
 
-/* Или можно создать отдельный разделительный элемент */
-
-.big-emoji {
-    font-size: 3rem; /* Размер можно менять */
-    color: #81afb3;
-    box-shadow: #628a8d;
-    margin-right: -10px;
+/* Смартфоны: одна колонка везде */
+@media screen and (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .simple-price-table th,
+    .simple-price-table td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    .text-card {
+        min-width: unset;
+    }
+    
+    .accordion-native {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
-/* Или глобально для всех эмодзи на странице */
-.emoji {
-    font-size: 2em;
-    color: #81afb3;
-    box-shadow: #628a8d;
-}
 
-@media (max-width: 768px) { .card-container { grid-template-columns: repeat(2, 1fr); /* На мобильных — 2 колонки */ /* Или для Flexbox: flex-wrap: wrap; и width: 50%; */ } }
+/* Принудительная адаптация в самом конце файла */
+@media screen and (max-width: 768px) {
+    html, body, .site-header, .card-grid, .card-row, .container, .application-form {
+        width: 100% !important;
+        max-width: 768px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    .text-card, .card {
+        min-width: unset !important;
+    }
+}
