@@ -568,7 +568,7 @@ button {
     font-size: 16px;
     max-width: 850px;
     width: 100%;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Times New Roman', serif ;
 } 
 button:disabled { 
     background-color: #a0a0a0; 
