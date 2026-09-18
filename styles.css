@@ -631,7 +631,7 @@ html, body {
     padding: 0;
     max-width: 850px;
     height: 100%;
-    font-family: EB Garamond;
+    font-family: 'Times New Roman', serif ;
 }
 
 .skills-container {
