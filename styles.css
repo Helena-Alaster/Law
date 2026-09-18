@@ -617,8 +617,8 @@ button:disabled {
     html, body, .site-header, .card-grid, .card-row, .container, .application-form {
         width: 100% !important;
         max-width: 768px !important;
-        margin-left: 5px !important;
-        margin-right: 5px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         left: 0 !important;
         right: 0 !important;
     }
