@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Times New Roman', serif;
     overflow-x: hidden; /* Страховка от случайных вылетов блоков */
     color: #000000;
     line-height: 1.6;
@@ -349,7 +349,7 @@ body {
   overflow: hidden;
   max-width: 850px;
   width: 100%;
-  font-family: EB Garamond, sans-serif;
+  font-family: 'Times New Roman', sans-serif;
   margin-bottom: 5%;
 }
 
@@ -490,7 +490,7 @@ input[type="text"], input[type="email"], select, textarea {
     border: 1px solid #ccc; 
     border-radius: 4px; 
     box-sizing: border-box; 
-    font-size: 16px; 
+    font-size: 20px; 
 } 
 textarea { 
     resize: vertical; 
@@ -514,9 +514,9 @@ button {
     color: #0e0e0e;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Times New Roman', serif;
 } 
 button:disabled { 
     background-color: #a0a0a0; 
@@ -615,7 +615,7 @@ button:disabled {
 /* Принудительная адаптация в самом конце файла */
 @media screen and (max-width: 768px) {
     html, body, .site-header, .card-grid, .card-row, .container, .application-form {
-        width: 100% !important;
+        width: 90% !important;
         max-width: 768px !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
