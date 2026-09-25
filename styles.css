@@ -491,6 +491,7 @@ input[type="text"], input[type="email"], select, textarea {
     border-radius: 4px; 
     box-sizing: border-box; 
     font-size: 20px; 
+    font-family: auto;
 } 
 textarea { 
     resize: vertical; 
