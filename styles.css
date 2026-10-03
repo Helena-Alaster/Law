@@ -462,6 +462,7 @@ details[open] > .native-header::after {
     opacity: 0.6;
     margin-top: 2rem;
     color: #718096;
+    margin: auto;
 }
 
 
