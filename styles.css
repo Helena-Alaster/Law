@@ -61,7 +61,7 @@ body {
     margin-left: 30px;
 }
 
-.nav-list  { 
+.nav-list a { 
     text-decoration: none;
     color: #0a192f;
     font-weight: 500;
@@ -70,7 +70,7 @@ body {
     letter-spacing: 0.2px;
 }
 
-.nav-list :hover { 
+.nav-list a:hover { 
     color: #2c5282;
 }
 
