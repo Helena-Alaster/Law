@@ -6,7 +6,7 @@
     <title>ЮРИСТ</title>
     
     <!-- Подключение шрифта EB Garamond для официального стиля -->
-    
+
     <!-- ГЛАВНАЯ СТРОКА: подключение ваших стилей -->
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -22,23 +22,25 @@
             <div class="logo-container">
     <!-- Здесь вставьте свой логотип -->
             <img src="icons/logs.jpg" alt="Логотип сайта" class="logo-image">
-            <nav class="navigation"> 
+            </div>
+            <button class="burger-btn" type="button" aria-label="Открыть меню" aria-expanded="false"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </button> <!-- МЕНЮ НАВИГАЦИИ --> 
+            <nav id="main-nav" class="navigation"> 
                 <ul class="nav-list"> 
-                    <li><a href="#about">Обо мне</a></li> 
-                    <li><a href="#court">Судебное представительство</a></li> 
-                    <li><a href="#business">Сопровождение бизнеса</a></li> 
-                    <li><a href="#state">Общение с государством</a></li> 
-                    <li><a href="#coop">Заявка на сотрудничество</a></li> 
+                    <li><a href="#home">Обо мне</a></li> 
+                    <li><a href="#about">Судебное представительство</a></li> 
+                    <li><a href="#services">Сопровождение бизнеса</a></li> 
+                    <li><a href="#prices">Общение с государством</a></li> 
+                    <li><a href="#contacts">Заявка на сотрудничество</a></li> 
                 </ul> 
-            </nav> <!-- Кнопка бургер-меню (видна только на мобильных) --> 
-            <button class="burger-btn" aria-label="Открыть меню"> 
-                <span></span> 
-                <span></span> 
-                <span></span> 
-            </button>
+            </nav>
 
-            </div> 
+            
         </header>
+        <hr class="thin-divider">
         <div class="card">
             <section id="about"> 
                 <h2>Обо мне</h2> 
@@ -70,8 +72,8 @@
                             - Мониторинг законодательства и адаптация внутренних политик под новые регуляторные требования.</p>
                 </div>
             </details>
-                <button onclick="togglePrices()" id="js-toggle-btn">Стоимость услуг</button>
-<div id="js-prices-table" style="display: none; margin-top: 15px;">
+                <button onclick="togglePrices()" id="js1-toggle-btn">Показать прайс-лист</button>
+<div id="js1-prices-table" style="display: none; margin-top: 15px;">
     <!-- Обертка для адаптации под мобильные устройства -->
 <div class="price-table-wrapper">
     <table class="simple-price-table">
@@ -97,18 +99,20 @@
 </div>
    <!-- Ваша таблица -->
 </div>
+
 <script>
 function togglePrices() {
-    var table = document.getElementById("js-prices-table");
-    var btn = document.getElementById("js-toggle-btn");
+    var table = document.getElementById("js1-prices-table");
+    var btn = document.getElementById("js1-toggle-btn");
     
     if (table.style.display === "none") {
         table.style.display = "block";
-        btn.innerText = "Стоимость услуг";
+        btn.innerText = "Скрыть прайс-лист";
     } else {
         table.style.display = "none";
-        btn.innerText = "Стоимость услуг";
+        btn.innerText = "Показать прайс-лист";
     }
+
 }
 function togglePrices2() {
         var table = document.getElementById("js2-prices-table");
@@ -116,10 +120,10 @@ function togglePrices2() {
         
         if (table.style.display === "none") {
             table.style.display = "block";
-            btn.innerText = "Стоимость услуг";
+            btn.innerText = "Скрыть прайс-лист";
         } else {
             table.style.display = "none";
-            btn.innerText = "Стоимость услуг";
+            btn.innerText = "Показать прайс-лист";
         }}
 
 function togglePrices3() {
@@ -128,14 +132,13 @@ function togglePrices3() {
         
         if (table.style.display === "none") {
             table.style.display = "block";
-            btn.innerText = "Стоимость услуг";
+            btn.innerText = "Скрыть прайс-лист";
         } else {
             table.style.display = "none";
-            btn.innerText = "Стоимость услуг";
+            btn.innerText = "Показать прайс-лист";
         }}
+
 </script>
-                
-                
             </section>
             <section id="business">
                 <h2>Сопровождение бизнеса</h2> 
@@ -172,7 +175,7 @@ function togglePrices3() {
                             - Офисное ПО: MS Office, Excel, PDF, FineRider, CamScan, 1С.</p>
                 </div>
             </details>
-                           <button onclick="togglePrices2()" id="js2-toggle-btn">Стоимость услуг</button>
+            <button onclick="togglePrices2()" id="js2-toggle-btn">Показать прайс-лист</button>
 <div id="js2-prices-table" style="display: none; margin-top: 15px;">
     <!-- Обертка для адаптации под мобильные устройства -->
 <div class="price-table-wrapper">
@@ -189,6 +192,7 @@ function togglePrices3() {
         </tbody>
     </table>
 </div>
+    
         </section> 
         <section id="state">
         <h2>Общение с государством</h2> 
@@ -206,7 +210,7 @@ function togglePrices3() {
                                 - Мотивация образовательных учреждений к проведению дополнительных уроков правовой тематики.</p>
                 </div>
             </details>
-<button onclick="togglePrices3()" id="js3-toggle-btn">Стоимость услуг</button>
+<button onclick="togglePrices3()" id="js3-toggle-btn">Показать прайс-лист</button>
 <div id="js3-prices-table" style="display: none; margin-top: 15px;">
     <!-- Обертка для адаптации под мобильные устройства -->
 <div class="price-table-wrapper">
@@ -227,42 +231,93 @@ function togglePrices3() {
         </section>
         </div>
 
-            
-        
-           <form action="mailer.php" method="POST" style="width: 100%; max-width: 820px; margin: auto; background-color: white; padding: 10px 40px;">
-               <h2>Заявка на сотрудничество</h2>
-            <label for="service">Выберите для кого нужна услуга:</label>
-            <select id="service" name="service" required>
-                <option value="" disabled selected>-- Выберите из списка --</option>
-                <option value="consultation">Физическое лицо</option>
-                <option value="audit">Юридическое лицо</option>
-                <option value="development">Холдинг</option>
-            </select>
-            <label for="service">Выберите услуги в какой области Вас интересуют:</label>
-            <select id="service" name="service" required>
-                <option value="" disabled selected>-- Выберите из списка --</option>
-                <option value="consultation">Судебное представительство</option>
-                <option value="audit">Сопровождение бизнеса</option>
-                <option value="development">Общение с государством</option>
-            </select>
-                <label for="name">Ваше имя *</label> 
-                <input type="text" id="name" name="name" placeholder="Иван Иванов" required> <!-- Добавлена почта --> 
-                <label for="comment">Ваш комментарий</label> 
-                <input type="text" id="comment" name="comment" placeholder="Ваш комментарий" required>
-            </select>
-
-            <label for="email">Ваш Email:</label>
-            <input type="email" id="email" name="email" required class="checkbox-group"> 
-                <input type="checkbox" id="privacy" name="privacy" required> 
-                <label for="privacy">Я даю согласие на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой конфиденциальности</a> *</label> 
-            <button type="submit">Отправить заявку</button>
-        </form>
-        <footer class="site-footer">
-            <div class="inner-container"> <!-- Ограничивает ширину до max-width -->
-                <p class="copyright">© 2026 Все права защищены.</p>
+            <div class="accordion-native">
+                <details>
+                    <summary class="native-header">Почему я нужна?</summary>
+                    <div class="native-content">
+                        <p>Моя ценность — в способности видеть систему целиком: от регистрации ООО до изменения правил работы маркетплейса или защиты данных компании.</p><br>
+                                    <p><b>Экономия денег</b> Я знаю, как работают взыскатели, потому что сама им была. Я построю систему договоров так, что взыскивать ничего не придется. Это прямая экономия на судах и юристах.</p><br>
+                                    <p><b>Безопасность</b> Я проверю контрагента так, что он не сможет обмануть. Я выстрою процесс так, что бухгалтерия не допустит ошибку.</p><br>
+                                    <p><b>Автономность</b> Мне не нужен начальник, который будет стоять над душой. Я сама структурирую свою работу и держу руку на пульсе. <br>Для руководителя это подарок — снять с себя микроменеджмент юридического отдела.</p>
+                
+                </details>
+                <details>
+                    <summary class="native-header">Ценообразование</summary>
+                    <div class="native-content">
+                        <p>Моя ценность — в способности видеть систему целиком: от регистрации ООО до изменения правил работы маркетплейса или защиты данных компании.</p><br>
+                                    <p><b>Экономия денег</b> Я знаю, как работают взыскатели, потому что сама им была. Я построю систему договоров так, что взыскивать ничего не придется. Это прямая экономия на судах и юристах.</p><br>
+                                    <p><b>Безопасность</b> Я проверю контрагента так, что он не сможет обмануть. Я выстрою процесс так, что бухгалтерия не допустит ошибку.</p><br>
+                                    <p><b>Автономность</b> Мне не нужен начальник, который будет стоять над душой. Я сама структурирую свою работу и держу руку на пульсе. <br>Для руководителя это подарок — снять с себя микроменеджмент юридического отдела.</p>
+                
+                </details>
             </div>
-        </footer>
-    </div>
+        <section id="coop">
+            <form action="mailer.php" method="POST" style="width: 100%; max-width: 820px; margin: auto; background-color: white; padding: 10px 40px;">
+                <h2>Заявка на сотрудничество</h2>
+                <label for="service">Выберите для кого нужна услуга:</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>-- Выберите из списка --</option>
+                    <option value="consultation">Физическое лицо</option>
+                    <option value="audit">Юридическое лицо</option>
+                    <option value="development">Холдинг</option>
+                </select>
+                <label for="service">Выберите услуги в какой области Вас интересуют:</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>-- Выберите из списка --</option>
+                    <option value="consultation">Судебное представительство</option>
+                    <option value="audit">Сопровождение бизнеса</option>
+                    <option value="development">Общение с государством</option>
+                </select>
+                    <label for="name">Ваше имя *</label> 
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required> <!-- Добавлена почта --> 
+                    <label for="comment">Ваш комментарий</label> 
+                    <input type="text" id="comment" name="comment" placeholder="Ваш комментарий" required>
+                </select>
+
+                <label for="email">Ваш Email:</label>
+                <input type="email" id="email" name="email" required class="checkbox-group"> 
+                    <input type="checkbox" id="privacy" name="privacy" required> 
+                    <label for="privacy">Я даю согласие на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой конфиденциальности</a> *</label> 
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </section>
+            <footer class="site-footer">
+                <div class="inner-container"> <!-- Ограничивает ширину до max-width -->
+                    <p class="copyright">© 2026 Все права защищены.</p>
+                </div>
+            </footer>
+        </div>
+        <script>
+        const burger = document.querySelector('.burger-btn');
+const navList = document.querySelector('.nav-list');
+
+if (burger && navList) {
+  burger.addEventListener('click', () => {
+    // Переключаем класс на списке
+    navList.classList.toggle('active');
+    // Меняем состояние самой кнопки для анимации полосок
+    burger.classList.toggle('active');
+    // Блокируем прокрутку фона при открытом меню (опционально)
+    document.body.classList.toggle('lock-scroll');
+  });
+
+  // Закрытие меню при клике на ссылку (опционально, для SPA)
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('active');
+      burger.classList.remove('active');
+      document.body.classList.remove('lock-scroll');
+    });
+  });
+}
+
+/* Если используете этот класс, добавьте в CSS закрытие скролла */
+/*
+body.lock-scroll {
+    overflow: hidden;
+}
+*/
+</script>
     </body> 
 </html>
 
