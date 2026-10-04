@@ -10,11 +10,47 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() { 
-    const burger = document.querySelector('.burger-btn'); 
-    const nav = document.querySelector('.navigation'); 
-burger.addEventListener('click', function() { 
-    nav.classList.toggle('active'); 
-    burger.classList.toggle('active'); 
-}); 
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.burger-btn');
+    const nav = document.querySelector('.nav-list');
+
+    if (burger && nav) {
+        burger.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Меняем состояние кнопки для скринридеров
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            this.classList.toggle('active', !isExpanded);
+
+            // Меняем состояние меню
+            nav.classList.toggle('active', !isExpanded);
+
+            // Блокировка скролла body при открытом меню (опционально, но рекомендуется)
+            if (!isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        /* Закрытие меню при клике на ссылку (UX-стандарт) */
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.setAttribute('aria-expanded', 'false');
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        /* Закрытие меню по нажатию на Esc */
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                burger.setAttribute('aria-expanded', 'false');
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
