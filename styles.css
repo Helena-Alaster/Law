@@ -866,11 +866,13 @@ body {
     /* 2. Показываем бургер */
     .burger-btn {
         display: flex;
+        margin-left: auto;
     }
 
     /* 3. Состояние открытого меню (управляется через JS-класс .active) */
     .nav-list.active {
         display: flex !important;
+        margin-left: auto;
     }
 }
 
