@@ -127,8 +127,8 @@ body {
     margin-bottom: 20px;
     color: #0a192f;
     text-align: left;
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
     line-height: 1.3;
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 12px;
@@ -147,7 +147,7 @@ body {
 .container p {
     margin-bottom: 20px;
     opacity: 0.9;
-    font-size: 1rem;
+    font-size: 20px;
     line-height: 1.7;
     max-width: 800px;
     text-align: justify;
@@ -309,6 +309,7 @@ body {
     padding: 14px 16px;
     border: 1px solid #e2e8f0;
     color: #2d3748;
+    font-size: 18px;
 }
 
 .simple-price-table thead {
@@ -478,8 +479,9 @@ details[open] > .native-header::after {
 label { 
     display: block; 
     margin-bottom: 8px; 
-    font-weight: 600; 
+    font-weight: 500; 
     color: #0a192f;
+    font-size: 18px;
 } 
 input[type="text"], input[type="email"], select, textarea { 
     width: 100%; 
@@ -488,7 +490,7 @@ input[type="text"], input[type="email"], select, textarea {
     border: 1px solid #e2e8f0; 
     border-radius: 0;
     box-sizing: border-box; 
-    font-size: 16px; 
+    font-size: 18px; 
     font-family: 'Inter', sans-serif;
     color: #2d3748;
 } 
@@ -510,14 +512,13 @@ textarea {
 button { 
     padding: 14px 20px;
     cursor: pointer;
-    background-color: #0a192f;
-    color: #ffffff;
+    color: #1a202f;
     border: none;
     border-radius: 0;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
     font-family: 'PT Serif', serif;
-    font-weight: 600;
+    font-weight: 500;
     transition: background-color 0.2s ease;
 } 
 button:hover {
@@ -530,7 +531,7 @@ button:disabled {
 } 
 #result { 
     margin-top: 15px; 
-    font-size: 14px; 
+    font-size: 18px; 
     color: #4a5568; 
 } 
 .honeypot { 
