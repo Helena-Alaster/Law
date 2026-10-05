@@ -888,6 +888,9 @@ body {
     }
     .container h2 {
         font-size: 22px;
+        font-family: 'Candara';
+        font-weight: 600;
+        color: #444444;
     }
     
     .card-row, .card-grid {
