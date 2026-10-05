@@ -517,7 +517,7 @@ button {
     border-radius: 0;
     font-size: 18px;
     width: 100%;
-    font-family: 'PT Serif', serif;
+    font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
     font-weight: 500;
     transition: background-color 0.2s ease;
 } 
