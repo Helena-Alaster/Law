@@ -881,6 +881,7 @@ body {
     .nav-list.active {
         display: flex !important;
         margin-left: auto;
+        margin-top: 0px;
     }
 }
 
