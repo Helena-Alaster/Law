@@ -328,6 +328,7 @@ body {
 .simple-price-table tbody td {
     border-top: none;
     border-bottom: 1px solid #e2e8f0;
+    font family: 'EB Garamond'
 }
 .simple-price-table tbody tr:last-child td {
     border-bottom: none;
