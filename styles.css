@@ -297,7 +297,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     min-width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     font-family: 'EB Garamond', sans-serif; /* Для таблиц рубленый шрифт читается лучше */
     border: 1px solid #e2e8f0;
