@@ -724,6 +724,7 @@ body {
     display: inline-block;
     height: 55px;
     object-fit: contain;
+    margin-top: 15px;
 }
 
 /* Навигация */
