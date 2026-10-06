@@ -494,7 +494,7 @@ input[type="text"], input[type="email"], select, textarea {
     border: 1px solid #e2e8f0; 
     border-radius: 0;
     box-sizing: border-box; 
-    font-size: 1rem; 
+    font-size: 0.9rem; 
     color: #2d3748;
 } 
 textarea { 
