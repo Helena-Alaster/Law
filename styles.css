@@ -374,7 +374,7 @@ details:last-child {
   cursor: pointer;
   list-style: none;
   transition: background-color 0.2s ease;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #0a192f;
   font-family: 'EB Garamond';
@@ -616,7 +616,7 @@ button:disabled {
         font-size: 28px;
     }
     .container h2 {
-        font-size: 24px;
+        font-size: 1.1rem;
     }
     .container h3 {
         font-size: 20px;
@@ -884,15 +884,15 @@ body {
 /* Смартфоны */
 @media screen and (max-width: 480px) {
     .container {
-        padding-top: 40px;
+        padding-top: 20px;
     }
     
     .container h1 {
         font-size: 28px;
     }
     .container h2 {
-        font-size: 22px;
-        font-family: 'Candara';
+        font-size: 1.1rem;
+        font-family: 'EB Garamond';
         font-weight: 600;
         color: #444444;
     }
