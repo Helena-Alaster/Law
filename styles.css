@@ -485,7 +485,7 @@ label {
     margin-bottom: 8px; 
     font-weight: 500; 
     color: #0a192f;
-    font-size: 18px;
+    font-size: 1rem;
 } 
 input[type="text"], input[type="email"], select, textarea { 
     width: 100%; 
@@ -494,8 +494,7 @@ input[type="text"], input[type="email"], select, textarea {
     border: 1px solid #e2e8f0; 
     border-radius: 0;
     box-sizing: border-box; 
-    font-size: 18px; 
-    font-family: 'Inter', sans-serif;
+    font-size: 1rem; 
     color: #2d3748;
 } 
 textarea { 
