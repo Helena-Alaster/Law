@@ -12,7 +12,7 @@ html, body {
     font-family: 'EB Garamond', serif; /* Классическая антиква */
     overflow-x: hidden;
     color: #0a192f; /* Глубокий темно-синий вместо черного */
-    line-height: 1.7;
+    line-height: 1.3;
     background-color: #f8fafc; /* Светлый фон документа */
 }
 
@@ -66,7 +66,7 @@ body {
     color: #0a192f;
     font-weight: 500;
     transition: color 0.2s ease, opacity 0.2s ease;
-    font-size: 16px;
+    font-size: 0.7rem;
     letter-spacing: 0.2px;
 }
 
