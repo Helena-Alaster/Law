@@ -924,4 +924,5 @@ body {
         left: 0 !important;
         right: 0 !important;
     }
+    .site-header: 80px;
 }
