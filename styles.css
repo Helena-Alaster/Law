@@ -414,7 +414,7 @@ details[open] > .native-header::after {
   
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .native-header, .native-content {
     padding-left: 16px;
     padding-right: 16px;
