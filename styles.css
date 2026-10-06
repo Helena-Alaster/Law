@@ -888,6 +888,7 @@ body {
 @media screen and (max-width: 480px) {
     .container {
         padding-top: 20px;
+        line-height: 1.5rem;
     }
     
     .container h1 {
