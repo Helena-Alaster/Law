@@ -377,8 +377,8 @@ details:last-child {
   cursor: pointer;
   list-style: none;
   transition: background-color 0.2s ease;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 400;
   color: #0a192f;
   font-family: 'EB Garamond';
 }
@@ -521,10 +521,10 @@ button {
     color: #1a202f;
     border: none;
     border-radius: 0;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     width: 100%;
     font-family: 'EB Garamond', serif;
-    font-weight: 500;
+    font-weight: 400;
     transition: background-color 0.2s ease;
 }
 } 
