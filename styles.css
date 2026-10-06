@@ -147,7 +147,7 @@ body {
 .container p {
     margin-bottom: 20px;
     opacity: 0.9;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.5;
     max-width: 800px;
     text-align: justify;
@@ -319,6 +319,7 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
+    font-family: 'EB Garamond';
 }
 
 .simple-price-table tbody tr:nth-child(even) {
