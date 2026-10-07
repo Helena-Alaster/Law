@@ -1,35 +1,28 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Получаем данные из выпадающего меню
-    $service = htmlspecialchars($_POST['service']);
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
     
-    // Получаем email пользователя (если добавили такое поле)
-    $user_email = htmlspecialchars($_POST['email']);
-    
-    // Переводим технические значения обратно в текст для красивого письма
-    $services_list = [
-        'consultation' => 'Консультация',
-        'audit' => 'Аудит проекта',
-        'development' => 'Разработка'
-    ];
-    $service_name = isset($services_list[$service]) ? $services_list[$service] : $service;
+    // Собираем выбранные пункты
+    $services = isset($_POST['services']) ? implode(", ", $_POST['services']) : "Не выбраны";
 
-    $to = "huaqella@gmail.com"; /* Ваша почта */
-    $subject = "Новая заявка с сайта";
+    $to = "huaqella@gmail.com"; // Сюда придет письмо
+    $subject = "Заявка с сайта от " . $name;
     
-    // Формируем тело письма
-    $message = "Пользователь оставил заявку:\n\n";
-    $message .= "Услуга: " . $service_name . "\n";
-    $message .= "Email для связи: " . $user_email . "\n";
+    $message = "Имя: " . $name . "\n";
+    $message .= "Email: " . $email . "\n";
+    $message .= "Услуги: " . $services;
     
-    $headers = "From: no-reply@yourdomain.ru\r\n" .
-               "Reply-To: " . $user_email . "\r\n" .
-               "Content-type: text/plain; charset=utf-8\r\n";
+    $headers = "From: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
 
-    if(mail($to, $subject, $message, $headers)) {
-        echo "Заявка успешно отправлена!";
+    // Отправка
+    if (mail($to, $subject, $message, $headers)) {
+        // Переадресация на страницу благодарности
+        header("Location: thanks.html");
+        exit();
     } else {
-        echo "Ошибка при отправке.";
+        echo "Ошибка отправки. Попробуйте позже.";
     }
 }
 ?>
