@@ -300,7 +300,6 @@ body {
     min-width: 100%;
     font-size: 0.9rem;
     line-height: 1.6;
-    font-family: 'EB Garamond', sans-serif; /* Для таблиц рубленый шрифт читается лучше */
     border: 1px solid #e2e8f0;
 }
 
@@ -311,7 +310,7 @@ body {
     border: 1px solid #e2e8f0;
     color: #2d3748;
     font-size: 0.8rem;
-    font-family: 'EB Garamond';
+    
 }
 
 .simple-price-table thead {
@@ -321,7 +320,7 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    font-family: 'EB Garamond';
+    
 }
 
 .simple-price-table tbody tr:nth-child(even) {
@@ -331,7 +330,7 @@ body {
 .simple-price-table tbody td {
     border-top: none;
     border-bottom: 1px solid #e2e8f0;
-    font family: 'EB Garamond';
+    
 }
 .simple-price-table tbody tr:last-child td {
     border-bottom: none;
@@ -381,7 +380,7 @@ details:last-child {
   font-size: 0.85rem;
   font-weight: 400;
   color: #0a192f;
-  font-family: 'EB Garamond';
+  
 }
 
 .native-header:hover {
@@ -523,7 +522,6 @@ button {
     border-radius: 0;
     font-size: 0.8rem;
     width: 100%;
-    font-family: 'EB Garamond', serif;
     font-weight: 400;
     transition: background-color 0.2s ease;
 }
@@ -681,20 +679,7 @@ button:disabled {
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
-    overflow-x: hidden;
-    color: #0a192f;
-    line-height: 1.7;
-    background-color: #f8fafc;
-}
 
-body {
-    user-select: auto;
-}
 
 /* --- ШАПКА И НАВИГАЦИЯ --- */
 .site-header {
@@ -898,7 +883,6 @@ body {
     }
     .container h2 {
         font-size: 1.1rem;
-        font-family: 'EB Garamond';
         font-weight: 600;
         color: #444444;
     }
