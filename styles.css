@@ -882,6 +882,7 @@ body {
         display: flex !important;
         margin-left: auto;
         margin-top: 0px;
+        height: auto;
     }
 }
 
