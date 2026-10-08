@@ -146,7 +146,7 @@ body {
 
 .container p {
     opacity: 0.9;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     max-width: 800px;
     text-align: justify;
@@ -377,9 +377,10 @@ details:last-child {
   cursor: pointer;
   list-style: none;
   transition: background-color 0.2s ease;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: #0a192f;
+  opacity: 0.9;
   
 }
 
@@ -524,6 +525,7 @@ button {
     width: 100%;
     font-weight: 400;
     transition: background-color 0.2s ease;
+    font-family: 'EB Garamond';
 }
 } 
 button:hover {
@@ -736,7 +738,7 @@ button:disabled {
     color: #0a192f;
     font-weight: 500;
     transition: color 0.2s ease;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2px;
 }
 
